@@ -243,38 +243,49 @@ void ArrayLocal()
 }
 
 
-int main()
-{ 
-    
-    
-    
-    const int MAX_SIZE = 560;
-    std::cout << "Hello World!\n";
-    ShowMainMenu();
-    /*
-    double A[MAX_SIZE], B[MAX_SIZE],C[MAX_SIZE];
-    int n,m;
-    n = RndInputArray(MAX_SIZE, A);
-    WriteArrayTextFile(n, A, "1.txt");
-    m = ReadArrayTextFile(MAX_SIZE, B, "1.txt");
-    cout << " \n m= " << m << endl;
-    for (int i = 0; i < m; i++)
-        cout << B[i] << "   ";
-    WriteArrayBinFile(n, A, "1.bin");
-    m = ReadArrayBinFile(MAX_SIZE, C, "1.bin");
-    cout << " \n m= " << m << endl;
-    for (int i = 0; i < m; i++)
-        cout << C[i] << "   ";
-    cout << "\n  Vector \n";
-    vector<double> vA;
-    ConsoleInputVector(MAX_SIZE, vA);
-    for (auto v : vA) {
-        cout << v << "   ";
-    }
-*/
-    TaskV();
-    return 1;
 
+int main() {
+    const int n = 10;
+    int a[n] = {-1, -2, 0, 5, 4, -6, 7, 9, 0, 3};
+    int count = 0;
+    for (int i = 0; i < n; i++) {
+        if (a[i] != 0) {
+            count++;
+        }
+        cout<<a[i]<<" ";
+    }
+    cout<<endl;
+    int b[count];
+    int j=0;
+    for (int i=0; i<n; i++) {
+            if (a[i] != 0) {
+                b[j] = a[i];
+                j++;
+            }
+    }
+    cout<<"b[count]";
+    for(int i=0; i<count; i++){
+        cout<<b[i]<<" ";
+    }
+    cout<< endl;
+    int x;
+    int maxNegative = INT_MIN;
+    for (int i = 0; i < n; ++i) {
+    }
+    cout << " input x: ";
+    cin >> x;
+    for (int i = 0; i < n; ++i) {
+        if (a[i] < x && a[i] < 0) {
+            maxNegative = max(maxNegative, a[i]);
+        }
+    }
+    if (maxNegative != INT_MIN) {
+        cout << "max negative numb  " << x << ": " << maxNegative << endl;
+    } else {
+        cout << "error " << x << endl;
+    }
+
+    return 0;
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
